@@ -77,7 +77,7 @@ Demo GIF coming soon.
 
 1. Clone the repository:
 
-   git clone https://github.com/yourusername/eyeguard.git
+   git clone https://github.com/Hridaywho/Eye-Guard.git
 
 2. Open `index.html` in a modern browser.
 3. Allow camera permission.
