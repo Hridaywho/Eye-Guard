@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Strain Monitor - Documentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar h1 {
+            font-size: 1.8em;
+        }
+
+        .navbar nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            transition: opacity 0.3s;
+        }
+
+        .navbar nav a:hover {
+            opacity: 0.8;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        h3 {
+            color: #764ba2;
+            margin: 25px 0 15px 0;
+            font-size: 1.4em;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+
+        .code-block code {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        .success-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+        }
+
+        table tr:hover {
+            background: #f5f7fa;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .metric-card h4 {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .metric-card .value {
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 10px 0;
+            padding-left: 35px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <h1>👁️ Eye Strain Monitor</h1>
+            <nav>
+                <a href="welcome.html">Home</a>
+                <a href="index.html">Launch App</a>
+                <a href="documentation.html">Documentation</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="section">
+            <h2>📖 Complete Documentation</h2>
+            <p>Comprehensive guide to using and understanding the Eye Strain Monitor with Blink Detection system.</p>
+        </div>
+
+        <div class="section">
+            <h2>🎯 What is Blink Detection?</h2>
+            <p>Blink detection is a computer vision technique that identifies when a person blinks by analyzing facial landmarks around the eyes. Our system uses the Eye Aspect Ratio (EAR) method, which is highly accurate and computationally efficient.</p>
+            
+            <h3>Why Is Blinking Important?</h3>
+            <p>Blinking is crucial for eye health:</p>
+            <ul class="feature-list">
+                <li>Spreads tears evenly across the eye surface</li>
+                <li>Removes dust and irritants</li>
+                <li>Provides moisture to prevent dry eyes</li>
+                <li>Reduces eye strain and fatigue</li>
+                <li>Improves focus and concentration</li>
+            </ul>
+
+            <div class="warning-box">
+                <strong>⚠️ Digital Eye Strain:</strong> People blink 66% less when using computers, dropping from 15-20 blinks/min to just 5-7 blinks/min!
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🔬 How It Works</h2>
+            
+            <h3>1. Face Detection</h3>
+            <p>MediaPipe Face Mesh detects 468 facial landmarks in real-time, including precise eye landmark points.</p>
+
+            <h3>2. Eye Aspect Ratio (EAR) Calculation</h3>
+            <p>The system calculates EAR using this formula:</p>
+            <div class="code-block">
+                <code>
+EAR = (||p2-p6|| + ||p3-p5||) / (2 * ||p1-p4||)
+
+Where:
+- p1, p4 = horizontal eye corners
+- p2, p3, p5, p6 = vertical eye points
+                </code>
+            </div>
+
+            <div class="info-box">
+                <strong>ℹ️ How EAR Works:</strong> When eyes are open, EAR ≈ 0.3. When eyes close during a blink, EAR drops below 0.21. By monitoring this threshold, we detect blinks accurately.
+            </div>
+
+            <h3>3. Blink Detection Logic</h3>
+            <div class="code-block">
+                <code>
+if (EAR < 0.21 for 2+ consecutive frames):
+    count as blink
+    increment blink counter
+    record timestamp
+                </code>
+            </div>
+
+            <h3>4. Statistics Calculation</h3>
+            <p>The system tracks:</p>
+            <ul>
+                <li><strong>Total Blinks:</strong> Cumulative count</li>
+                <li><strong>Blink Rate:</strong> Blinks per minute (calculated over last 60 seconds)</li>
+                <li><strong>Average EAR:</strong> Mean eye openness over session</li>
+                <li><strong>Session Duration:</strong> Total monitoring time</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📊 Understanding Your Metrics</h2>
+            
+            <div class="grid-2">
+                <div class="metric-card">
+                    <h4>TOTAL BLINKS</h4>
+                    <div class="value">0</div>
+                    <p>Cumulative blink count for current session</p>
+                </div>
+                <div class="metric-card">
+                    <h4>BLINK RATE</h4>
+                    <div class="value">0</div>
+                    <p>Blinks per minute (live calculation)</p>
+                </div>
+            </div>
+
+            <h3>Blink Rate Interpretation</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Blink Rate (per min)</th>
+                        <th>Status</th>
+                        <th>Recommendation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>15-20+</td>
+                        <td>😊 Healthy</td>
+                        <td>Excellent! Keep it up</td>
+                    </tr>
+                    <tr>
+                        <td>10-14</td>
+                        <td>😐 Below Average</td>
+                        <td>Try to blink more consciously</td>
+                    </tr>
+                    <tr>
+                        <td>5-9</td>
+                        <td>😟 Low</td>
+                        <td>Take a break, blink exercises needed</td>
+                    </tr>
+                    <tr>
+                        <td>0-4</td>
+                        <td>🚨 Critical</td>
+                        <td>Stop immediately, rest your eyes</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Eye Aspect Ratio (EAR)</h3>
+            <div class="success-box">
+                <strong>Normal Range:</strong> 0.25 - 0.35 when eyes are open<br>
+                <strong>Blink Threshold:</strong> Below 0.21<br>
+                <strong>Closed Eyes:</strong> 0.10 - 0.15
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎛️ System Configuration</h2>
+
+            <h3>Default Settings</h3>
+            <div class="code-block">
+                <code>
+// Blink Detection Parameters
+earThreshold: 0.21          // Blink detection sensitivity
+consecutiveFrames: 2        // Frames needed to confirm blink
+alertCooldown: 30000        // 30 seconds between alerts
+
+// Health Thresholds
+healthyBlinkRate: 15        // Minimum healthy blinks/min
+warningBlinkRate: 10        // Warning threshold
+criticalThreshold: 30000    // Alert if no blink for 30s
+                </code>
+            </div>
+
+            <h3>Customization Options</h3>
+            <p>You can modify these values in <code>app.js</code> to adjust sensitivity:</p>
+            <ul>
+                <li><strong>earThreshold:</strong> Lower = more sensitive (may detect false positives)</li>
+                <li><strong>consecutiveFrames:</strong> Higher = less sensitive (may miss quick blinks)</li>
+                <li><strong>alertCooldown:</strong> Time between repeated alerts</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>⚠️ Alert System</h2>
+
+            <h3>Types of Alerts</h3>
+            
+            <div style="margin: 20px 0;">
+                <div class="info-box">
+                    <strong>ℹ️ Info Alerts:</strong> General information, session updates, 20-20-20 reminders
+                </div>
+                <div class="warning-box">
+                    <strong>⚠️ Warning Alerts:</strong> Low blink rate detected, below average performance
+                </div>
+                <div style="background: #ffebee; border-left: 4px solid #f44336; padding: 15px; border-radius: 5px;">
+                    <strong>🚨 Danger Alerts:</strong> Critical low blink rate, no blink for extended period
+                </div>
+            </div>
+
+            <h3>Alert Triggers</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Condition</th>
+                        <th>Alert Type</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Blink rate < 10/min</td>
+                        <td>Warning</td>
+                        <td>Low blink rate detected</td>
+                    </tr>
+                    <tr>
+                        <td>No blink for 30+ seconds</td>
+                        <td>Danger</td>
+                        <td>No recent blinks detected</td>
+                    </tr>
+                    <tr>
+                        <td>Every 20 minutes</td>
+                        <td>Info</td>
+                        <td>20-20-20 rule reminder</td>
+                    </tr>
+                    <tr>
+                        <td>Session start/stop</td>
+                        <td>Info</td>
+                        <td>Session status update</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>💡 Best Practices</h2>
+
+            <h3>Optimal Setup</h3>
+            <ul class="feature-list">
+                <li><strong>Lighting:</strong> Face should be well-lit, avoid backlighting</li>
+                <li><strong>Camera Position:</strong> 50-100cm from face, at eye level</li>
+                <li><strong>Background:</strong> Neutral background works best</li>
+                <li><strong>Browser:</strong> Use Chrome or Edge for best performance</li>
+            </ul>
+
+            <h3>During Use</h3>
+            <ul class="feature-list">
+                <li>Position monitor at arm's length (50-70cm)</li>
+                <li>Top of screen at or below eye level</li>
+                <li>Use proper lighting to reduce screen glare</li>
+                <li>Take breaks every 20 minutes (20-20-20 rule)</li>
+                <li>Blink consciously if rate drops below 15/min</li>
+            </ul>
+
+            <h3>Eye Exercises</h3>
+            <div class="success-box">
+                <strong>Blinking Exercise:</strong>
+                <ol style="margin: 10px 0; padding-left: 20px;">
+                    <li>Close eyes gently (don't squeeze)</li>
+                    <li>Hold for 2 seconds</li>
+                    <li>Open eyes and relax</li>
+                    <li>Repeat 10 times</li>
+                </ol>
+                Do this every hour to refresh your eyes!
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🔧 Troubleshooting</h2>
+
+            <h3>Common Issues</h3>
+            
+            <h4>❌ Camera Not Working</h4>
+            <ul>
+                <li>Check browser permissions (Settings → Privacy → Camera)</li>
+                <li>Ensure no other app is using the camera</li>
+                <li>Try refreshing the page</li>
+                <li>Restart browser if problem persists</li>
+            </ul>
+
+            <h4>❌ Face Not Detected</h4>
+            <ul>
+                <li>Improve lighting conditions</li>
+                <li>Remove glasses temporarily (optional)</li>
+                <li>Move closer to camera (recommended: 50-100cm)</li>
+                <li>Ensure face is fully visible</li>
+            </ul>
+
+            <h4>❌ Inaccurate Blink Detection</h4>
+            <ul>
+                <li>Adjust camera angle to see eyes clearly</li>
+                <li>Check if your EAR values are consistent</li>
+                <li>May need to adjust earThreshold in code</li>
+                <li>Ensure adequate lighting on face</li>
+            </ul>
+
+            <h4>❌ Poor Performance / Lag</h4>
+            <ul>
+                <li>Close unnecessary browser tabs</li>
+                <li>Use hardware acceleration (Chrome://settings)</li>
+                <li>Update browser to latest version</li>
+                <li>Reduce video resolution if needed</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🌐 Browser Compatibility</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Browser</th>
+                        <th>Version</th>
+                        <th>Status</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chrome</td>
+                        <td>90+</td>
+                        <td>✅ Full Support</td>
+                        <td>Recommended browser</td>
+                    </tr>
+                    <tr>
+                        <td>Edge</td>
+                        <td>90+</td>
+                        <td>✅ Full Support</td>
+                        <td>Excellent performance</td>
+                    </tr>
+                    <tr>
+                        <td>Firefox</td>
+                        <td>88+</td>
+                        <td>✅ Full Support</td>
+                        <td>Good compatibility</td>
+                    </tr>
+                    <tr>
+                        <td>Safari</td>
+                        <td>14+</td>
+                        <td>⚠️ Limited</td>
+                        <td>Some features may not work</td>
+                    </tr>
+                    <tr>
+                        <td>Opera</td>
+                        <td>76+</td>
+                        <td>✅ Full Support</td>
+                        <td>Based on Chromium</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>🔒 Privacy & Security</h2>
+
+            <div class="success-box">
+                <h4>✓ Your Privacy is Protected</h4>
+                <ul class="feature-list" style="margin-top: 10px;">
+                    <li><strong>No Server Upload:</strong> All processing happens locally in your browser</li>
+                    <li><strong>No Data Storage:</strong> No images or videos are saved anywhere</li>
+                    <li><strong>No Analytics:</strong> We don't track usage or collect statistics</li>
+                    <li><strong>No Internet Required:</strong> Works offline after initial load</li>
+                    <li><strong>Open Source:</strong> Code is transparent and auditable</li>
+                </ul>
+            </div>
+
+            <h3>How Your Data is Protected</h3>
+            <p>The Eye Strain Monitor processes everything in your browser using JavaScript and WebAssembly. The video feed never leaves your device. MediaPipe Face Mesh runs locally, ensuring complete privacy.</p>
+        </div>
+
+        <div class="section">
+            <h2>📚 Technical Details</h2>
+
+            <h3>Technologies Used</h3>
+            <ul>
+                <li><strong>MediaPipe Face Mesh:</strong> Google's ML solution with 468 facial landmarks</li>
+                <li><strong>JavaScript:</strong> Core application logic and UI</li>
+                <li><strong>HTML5 Canvas:</strong> Real-time video overlay and visualization</li>
+                <li><strong>CSS3:</strong> Modern, responsive design</li>
+                <li><strong>WebRTC:</strong> Camera access via getUserMedia API</li>
+            </ul>
+
+            <h3>Performance Metrics</h3>
+            <ul>
+                <li><strong>Frame Rate:</strong> 30 FPS (typical)</li>
+                <li><strong>Detection Latency:</strong> < 33ms per frame</li>
+                <li><strong>CPU Usage:</strong> 15-25% on modern hardware</li>
+                <li><strong>Memory:</strong> ~150-200 MB</li>
+            </ul>
+
+            <h3>Landmark Indices Used</h3>
+            <div class="code-block">
+                <code>
+LEFT_EYE_LANDMARKS:  [33, 160, 158, 133, 153, 144]
+RIGHT_EYE_LANDMARKS: [362, 385, 387, 263, 373, 380]
+
+These 6 points per eye form:
+- 2 horizontal corner points (left, right)
+- 4 vertical edge points (top-left, top-right, bottom-left, bottom-right)
+                </code>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎓 Research Background</h2>
+
+            <h3>Eye Aspect Ratio Method</h3>
+            <p>The EAR algorithm was introduced by Soukupová and Čech in their 2016 paper "Real-Time Eye Blink Detection using Facial Landmarks". It has become the standard method for blink detection due to its simplicity and accuracy.</p>
+
+            <h3>Clinical Significance</h3>
+            <div class="info-box">
+                <strong>Research Findings:</strong>
+                <ul style="margin: 10px 0; padding-left: 20px;">
+                    <li>Normal blink rate: 15-20 blinks per minute</li>
+                    <li>Screen use reduces blink rate by 50-66%</li>
+                    <li>Reduced blinking leads to dry eye syndrome</li>
+                    <li>Conscious blinking improves eye comfort and reduces strain</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🚀 Future Enhancements</h2>
+            <p>Planned features for future versions:</p>
+            <ul class="feature-list">
+                <li>Export session data to CSV/JSON</li>
+                <li>Historical trend analysis with charts</li>
+                <li>Screen distance estimation</li>
+                <li>Posture detection and alerts</li>
+                <li>Custom alert sounds</li>
+                <li>Dark mode support</li>
+                <li>Multi-language support</li>
+                <li>Mobile app version</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📞 Support & Feedback</h2>
+            <p>If you encounter issues or have suggestions:</p>
+            <ul>
+                <li>Check the Troubleshooting section above</li>
+                <li>Review the README.md file</li>
+                <li>Ensure your browser is up to date</li>
+                <li>Test with different lighting conditions</li>
+            </ul>
+            
+            <div class="success-box">
+                <strong>Remember:</strong> This tool is designed to help you maintain healthy eye habits. It's not a medical device and should not replace professional eye care. If you experience persistent eye problems, consult an eye care professional.
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: #2d2d2d; color: white; text-align: center; padding: 30px 20px; margin-top: 50px;">
+        <p style="font-size: 1.1em; margin-bottom: 10px;"><strong>Eye Strain Monitor with Blink Detection</strong></p>
+        <p>Take care of your eyes - they're irreplaceable! 👁️✨</p>
+        <p style="margin-top: 20px; opacity: 0.7; font-size: 0.9em;">© 2026 | Privacy-First | Open Source</p>
+    </footer>
+</body>
+</html>

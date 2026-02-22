@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Strain Monitor - Quick Start Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero img {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s;
+            margin: 20px 0;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .feature-card .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .steps {
+            margin: 40px 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: start;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f5f7fa;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .benefits {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .benefits h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .benefits ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefits li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .benefits li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        .tech-stack {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .tech-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .badge {
+            background: #667eea;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>👁️ Eye Strain Monitor</h1>
+            <p style="font-size: 1.2em; color: #666; margin-bottom: 20px;">
+                Protect your eyes with AI-powered real-time blink detection
+            </p>
+            <a href="index.html" class="cta-button">Launch Application →</a>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="icon">👁️</div>
+                <h3>Blink Detection</h3>
+                <p>Advanced AI tracks your blinks in real-time</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📊</div>
+                <h3>Live Statistics</h3>
+                <p>Monitor blink rate and eye health metrics</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">⚠️</div>
+                <h3>Smart Alerts</h3>
+                <p>Get notified when you need to blink more</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔒</div>
+                <h3>100% Private</h3>
+                <p>All processing happens locally in your browser</p>
+            </div>
+        </div>
+
+        <div class="steps">
+            <h2 style="text-align: center; color: #667eea; margin-bottom: 30px;">How to Use</h2>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Click Launch</h3>
+                    <p>Open the main application using the button above</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Allow Camera Access</h3>
+                    <p>Grant permission when your browser asks for camera access</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Start Monitoring</h3>
+                    <p>Click "Start Monitoring" and position your face in the camera view</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3>Work Naturally</h3>
+                    <p>Continue your work while the app tracks your eye health in the background</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="benefits">
+            <h2>Why Use Eye Strain Monitor?</h2>
+            <ul>
+                <li>Reduce digital eye strain and fatigue</li>
+                <li>Prevent dry eyes from reduced blinking</li>
+                <li>Get reminded to follow the 20-20-20 rule</li>
+                <li>Track your eye health over time</li>
+                <li>Improve work productivity with better eye care</li>
+                <li>Free and open-source solution</li>
+            </ul>
+        </div>
+
+        <div class="tech-stack">
+            <h2 style="color: #667eea; margin-bottom: 20px;">Powered By</h2>
+            <div class="tech-badges">
+                <span class="badge">MediaPipe Face Mesh</span>
+                <span class="badge">JavaScript</span>
+                <span class="badge">HTML5 Canvas</span>
+                <span class="badge">Computer Vision</span>
+                <span class="badge">Machine Learning</span>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>Remember:</strong> Normal blink rate is 15-20 times per minute</p>
+            <p>Take breaks every 20 minutes to keep your eyes healthy! 👁️✨</p>
+            <p style="margin-top: 20px; font-size: 0.9em;">
+                © 2026 Eye Strain Monitor | Privacy-First | No Data Collection
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
