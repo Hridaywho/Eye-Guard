@@ -59,7 +59,6 @@ When EAR falls below 0.21 for consecutive frames, a blink is registered.
 ## 🎥 Demo
 
 Demo GIF coming soon.  
-(Add a short screen recording as demo.gif for maximum impact.)
 
 ---
 
